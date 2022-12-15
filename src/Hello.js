@@ -1,11 +1,22 @@
 import React, {Component} from "react";
+
 export default class Hello extends Component 
 
 {
     constructor(){
         super();
-        this.state = {color: "red", digit: 0};
-
+        this.state = {color: "red", digit: 0, list:[
+            {title: "Ночь"},
+            {title: "Улица"},
+            {title: "Фонарь"},
+            {title: "Аптека"}]
+        };
+        
+    }
+    renderList(){
+        return this.state.list.map((item, index)=>{
+            return <div>{item.title}</div>
+        })
     }
     componentDidMount(){ 
         setTimeout(() => {
@@ -17,6 +28,9 @@ export default class Hello extends Component
                 Hello
             </div>
             <div>{this.state.digit}</div>
+            
+            {this.renderList()}
+            
             </div>
 
     }
