@@ -30,6 +30,7 @@ export default class Hello extends Component
             <div>{this.state.digit}</div>
             
             {this.renderList()}
+            <div>количество элементов массива = {this.state.list.length}</div>
             
             </div>
 
